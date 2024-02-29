@@ -2,13 +2,13 @@
 FROM node:20
 
 # Set the working directory in the container
-WORKDIR /slidev
+WORKDIR /slidev/workspace
 
 # Copy package.json and package-lock.json (if available) to the working directory
 COPY package*.json ./
 
 # Install dependencies, including Slidev and Playwright
-RUN npm install && npm install -g @slidev/cli
+RUN npm install && npm install -g @slidev/cli @slidev/theme-seriph @slidev/theme-default
 
 # Copy the rest of your application's source code
 # COPY . .
@@ -33,6 +33,7 @@ RUN if [ -f /etc/apt/sources.list ] && [ "$DEB_MIRROR" != "" ]; then \
         npm config set registry "${NPM_MIRROR}"; \
     fi
 
+RUN mkdir -p /slidev/workspace 
 
 # Use the custom entrypoint script to initialize the application
 ENTRYPOINT ["/entrypoint.sh"]
