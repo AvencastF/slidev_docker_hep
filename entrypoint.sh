@@ -15,6 +15,7 @@ echo "    slidev-docker-hep, by AvencastF"
 
 echo "==> Current Directory: $(pwd)"
 
+mkdir -p ${slidev_path}
 
 if [ "$NPM_MIRROR" != "" ]; then
     npm config set registry $NPM_MIRROR
