@@ -23,7 +23,7 @@ fi
 
 cd ${slidev_path}
 echo "==> Install Slidev and themes in ${slidev_path}"
-npm i @slidev/cli @slidev/theme-seriph @slidev/theme-default
+npm i @slidev/cli@v0.47.5 @slidev/theme-seriph @slidev/theme-default
 npm i slidev-theme-hep
 npm i -D playwright-chromium
 
